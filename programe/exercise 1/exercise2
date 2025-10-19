@@ -1,0 +1,12 @@
+#include<iostream>
+using namespace std;
+int main(){
+bool my_bool;
+my_bool= true;
+cout<< my_bool <<endl;
+bool test;
+test= false;
+my_bool= test;
+cout<< my_bool;
+return 0;
+}
