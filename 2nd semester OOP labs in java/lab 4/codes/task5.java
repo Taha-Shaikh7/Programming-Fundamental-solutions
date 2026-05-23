@@ -1,0 +1,28 @@
+public class task5 {
+public static void main(String[] args) {
+
+boolean arr[2][2]={};
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+}
+}
