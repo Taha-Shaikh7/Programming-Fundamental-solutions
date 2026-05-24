@@ -1,0 +1,493 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<title>Law Firm Website</title>
+
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+ <!-- Favicon -->
+    <link rel="icon" type="image/png" href="favicon.png">
+
+
+<!--css-->
+<style>
+
+/* RESET */
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+}
+
+body {
+    color: #333;
+    line-height: 1.6;
+}
+
+html {
+    scroll-behavior: smooth;
+}
+
+/* =============== NAVBAR =============== */
+
+.navbar {
+    width: 100%;
+    padding: 10px 30px;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    position: fixed; 
+    top: 0;
+    left: 0;
+    z-index: 2000;
+    background: rgba(0, 0, 0, 0.5);
+}
+
+.logo {
+    color: white;
+    font-size: 35px;
+    font-family: 'Cinzel', serif;
+    font-weight: 700;
+    letter-spacing: 1px;
+}
+
+
+
+.nav-links {
+    list-style: none;
+    display: flex;
+    gap: 35px;
+}
+
+.nav-links li a {
+    text-decoration: none;
+    color: white;
+    font-size: 16px;
+    transition: 0.3s;
+}
+
+.nav-links li a:hover {
+    color: #e74c3c;
+}
+
+/* =============== HERO SECTION =============== */
+
+.hero {
+    padding-top: 60px; 
+    gap: 15px; 
+    height: 70vh;
+
+    background-image: url('logo.jpg');
+    background-size:25%;
+    background-repeat: no-repeat;
+    background-position: left;
+     
+
+
+    background-color: black;  
+    color: white;
+    text-align: center;
+    padding-left: 120px;
+
+    display: flex;
+    flex-direction: column;
+align-items:center;
+    justify-content: center;
+}
+
+.hero h1 {
+    font-size: 3.2rem;
+    margin-bottom: 15px;
+}
+
+.hero p {
+    font-size: 1.3rem;
+    margin-bottom: 25px;
+}
+
+.btn {
+    display: inline-block;        
+    max-width: 120px;             
+    background: #ff7f50;         
+    color: white;
+    padding: 8px 15px;            
+    border-radius: 20px;
+    text-decoration: none;
+    font-weight: bold;
+    font-size: 14px;              
+    text-align: center;
+    transition: 0.3s;
+}
+
+.btn:hover {
+    background: #e6733c;
+}
+
+/* =============== SECTIONS =============== */
+
+section {
+    padding: 80px 20px;
+}
+
+h2 {
+    text-align: center;
+    font-size: 2.5rem;
+    color: #2c3e50;
+    margin-bottom: 40px;
+}
+
+/* ---- Services / Testimonials Cards ---- */
+
+.services, .testimonials {
+    display: flex;
+    justify-content: center;
+    flex-wrap: wrap;
+    gap: 25px;
+}
+
+.card {
+    width: 260px;
+    background: white;
+    padding: 25px;
+    text-align: center;
+    border-radius: 15px;
+    box-shadow: 0px 8px 15px rgba(0,0,0,0.1);
+}
+
+.card h3 {
+    margin-bottom: 5px;
+    color: #e74c3c;
+}
+
+
+/* FAQ SECTION */
+.faq-container {
+    max-width: 800px;
+    margin: auto;
+    padding: 20px;
+}
+
+.faq-item p {
+    margin-bottom: 15px;
+    font-size: 1rem;
+}
+
+.faq-item strong {
+    color: #e74c3c;
+}
+
+.faq-box {
+    width: 80%;
+    max-width: 700px;
+    margin: 10px auto;
+    padding: 15px;
+    background: #f4f4f4;
+    border-radius: 10px;
+    cursor: pointer;
+}
+
+.faq-box summary {
+    font-size: 1.2rem;
+    font-weight: bold;
+    color: #e74c3c;
+    outline: none;
+}
+
+.faq-box p {
+    margin-top: 10px;
+    font-size: 1rem;
+    line-height: 1.5;
+}
+
+
+#newsletter {
+    padding: 60px 20px;
+    background:#f4f4f4;
+    text-align:center;
+}
+
+.newsletter-form {
+    display: flex;
+    justify-content: center;
+    flex-wrap: wrap;
+    gap: 10px;
+    max-width: 500px;
+    margin: auto;
+}
+
+.newsletter-form input {
+    flex: 1;
+    padding: 12px;
+    border-radius: 10px;
+    border: 1px solid #ccc;
+}
+
+.newsletter-form button {
+    padding: 12px 20px;
+    border-radius: 50px;
+    background:#ff7f50;
+    border:none;
+    color:white;
+    font-weight:bold;
+}
+
+
+/* Contact Form */
+
+form {
+    max-width: 500px;
+    margin: 0 auto;
+    display: flex;
+    flex-direction: column;
+    gap: 20px;
+}
+
+input, textarea {
+    padding: 12px;
+    border-radius: 10px;
+    border: 1px solid #ccc;
+    font-size: 1rem;
+}
+
+button {
+    background: #2c3e50;
+    color: white;
+    padding: 12px;
+    border-radius: 50px;
+    border: none;
+    font-weight: bold;
+}
+/* TEAM SECTION */
+.team-container {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-wrap: wrap;
+    gap: 30px;
+}
+
+.team-card {
+    width: 300px;
+    background: white;
+    padding: 25px;
+    border-radius: 15px;
+    text-align: center;
+    box-shadow: 0 8px 15px rgba(0,0,0,0.1);
+}
+
+.team-card img {
+    width: 170px;
+    height: 250px;
+    border-radius: 50%;
+    object-fit: cover;
+    margin-bottom: 15px;
+}
+
+.team-card h3 {
+    color: #e74c3c;
+    margin-bottom: 5px;
+}
+
+.team-card p {
+    font-size: 0.95rem;
+    line-height: 1.4;
+}
+
+
+/* FOOTER */
+
+footer {
+    background: #2c3e50;
+    color: white;
+    text-align: center;
+    padding: 25px;
+    margin-top: 40px;
+}
+
+/* FAQ COLLAPSIBLE BUTTONS */
+.faq-btn {
+    width: 30%;
+   
+
+</style>
+
+</head>
+<body>
+
+<!-- =============== NAVBAR HTML =============== -->
+<nav class="navbar">
+    <h1 class="logo">Law Expert</h1>
+
+    <ul class="nav-links">
+   <li><a href="home.html">Home</a></li>
+        <li><a href="about.html">About</a></li>
+    <li><a href="services.html">Services</a></li>
+    <li><a href="#testimonials">Testimonials</a></li>
+    <li><a href="#contact">Contact</a></li>
+    <li><a href="team.html">Team</a></li>
+    <li><a href="#faq">FAQ</a></li>
+    
+</ul>
+
+</nav>
+
+
+<!-- =============== HERO =============== -->
+<div class="hero">
+    <h1>Your Trusted Legal Partner</h1>
+    <p>Expert legal advice and advocacy services to protect your rights.</p>
+    <a href="#contact" class="btn">Get Advice</a>
+</div>
+
+
+<!-- =============== ABOUT =============== -->
+<section id="about">
+    <h2>About Us</h2>
+    <p style="max-width:800px; margin:auto; text-align:center;">
+        <b>LawExpert is a modern law firm providing high-quality legal services. 
+        Our experienced lawyers ensure reliable guidance for all legal matters.</b>
+    </p>
+</section>
+
+
+<!-- =============== SERVICES =============== -->
+<section id="services">
+    <h2>Our Services</h2>
+
+    <div class="services">
+        <div class="card">
+            <h3>Family Law</h3>
+            <p>Divorce, child custody & family dispute resolution.</p>
+        </div>
+
+        <div class="card">
+            <h3>Criminal Law</h3>
+            <p>Defense services & criminal case representation.</p>
+        </div>
+
+        <div class="card">
+            <h3>Property Law</h3>
+            <p>Property disputes, contracts & registration help.</p>
+        </div>
+
+        <div class="card">
+            <h3>Corporate Law</h3>
+            <p>Business formation, compliance & consultancy.</p>
+        </div>
+    </div>
+</section>
+
+<!-- ================ ABOUT team =============== -->
+<section id="team">
+    <h2>Our Legal Advisers</h2>
+
+    <div class="team-container">
+
+        <!-- Existing Adviser -->
+        <div class="team-card">
+            <img src="your-photo.jpeg.jpg" alt="ADV ">
+            <h3>MAHNOOR</h3>
+            <p>Legal Adviser</p>
+            <p>I am a dedicated legal adviser providing personal, professional guidance for family law, property disputes, contracts, 
+            and more. Your legal rights are my priority.</p>
+        </div>
+
+        <!-- NEW Adviser: MUHAMMAD TAHA  -->
+        <div class="team-card">
+            <img src="unnamed.jpg" alt="Taha Shaikh">
+            <h3>MUHAMMAD TAHA</h3>
+            <p>He is one of our most experienced and trusted legal advisers.
+He handles major civil cases, property disputes, contracts, and legal documentation with expertise.
+Along with civil matters.”</p>
+        </div>
+</section>
+
+
+
+<!-- =============== TESTIMONIALS =============== -->
+<section id="testimonials">
+    <h2>What Clients Say</h2>
+
+    <div class="testimonials">
+        <div class="card">
+            <h3>Ali</h3>
+            <p>"Helped resolve my property dispute quickly."</p>
+        </div>
+
+        <div class="card">
+            <h3>Khalid</h3>
+            <p>"Great guidance during my family case."</p>
+        </div>
+
+        <div class="card">
+            <h3>Ayesha</h3>
+            <p>"Professional and supportive team of lawyers."</p>
+        </div>
+    </div>
+</section>
+
+<!-- =============== FAQ =============== -->
+<section id="faq">
+    <h2>Frequently Asked Questions</h2>
+
+    <details class="faq-box">
+        <summary>How can I book a legal consultation?</summary>
+        <p>You can book a consultation by filling out the contact form, messaging us directly, or scheduling an appointment through WhatsApp or email.</p>
+    </details>
+
+    <details class="faq-box">
+        <summary>What types of legal matters do you handle?</summary>
+        <p>We handle family disputes, property issues, small crime disputes, contracts, documentation, and general legal guidance.</p>
+    </details>
+
+    <details class="faq-box">
+        <summary>Do you provide online or remote legal advice?</summary>
+        <p>Yes, we offer legal advice through phone calls, WhatsApp, email, and video meetings for your convenience.</p>
+    </details>
+
+    <details class="faq-box">
+        <summary>How long does it usually take to resolve a case?</summary>
+        <p>Each case is different. After reviewing your matter, we give you a clear expected timeline based on the nature and complexity of the issue.</p>
+    </details>
+
+    <details class="faq-box">
+        <summary>Are my details and case information kept confidential?</summary>
+        <p>Absolutely. All personal information and case details are kept fully private and confidential under professional ethics.</p>
+    </details>
+
+</section>
+
+
+
+
+<!-- =============== CONTACT =============== -->
+<section id="contact">
+    <h2>Contact Us</h2>
+
+    <form>
+        <input type="text" placeholder="Your Name" required>
+        <input type="email" placeholder="Your Email" required>
+        <textarea rows="5" placeholder="Your Message"></textarea>
+        <button type="submit">Send Message</button>
+    </form>
+</section>
+
+
+
+<!-- =============== NEWSLETTER =============== -->
+<section id="newsletter">
+    <h2>Subscribe to Updates</h2>
+    <form class="newsletter-form">
+        <input type="email" placeholder="Enter your email" required>
+        <button type="submit">Subscribe</button>
+    </form>
+</section>
+
+<!-- =============== FOOTER =============== -->
+<footer>
+    <p>&copy; 2025 LawExpert. All Rights Reserved.</p>
+</footer>
+
+</body>
+</html>
